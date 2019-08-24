@@ -20,7 +20,7 @@
         <span class="word_tip">
           事件时间:
         </span>
-        <el-date-picker class="event_time" v-model="eventTime" size="small" type="date" placeholder="年月日"
+        <el-date-picker class="event_time" v-model="eventTime" size="small" type="date" placeholder="年月日" style="width: 220px;"
           format="yyyy 年 MM 月 dd 日" value-format="timestamp" :picker-options="pickerOptions"></el-date-picker>
         <span class="word_tip">精确到:</span>
         <el-radio v-model="accuracy" label="#A8D8B9">日</el-radio>
@@ -40,12 +40,12 @@
 
       <div style="margin: 30px 0;"></div>
       <div>
-          <el-upload v-loading="loadingPic" class="avatar-uploader" :http-request="uploadPic" :multiple="true"
-            :show-file-list="false" action="" :before-upload="beforeAvatarUpload"
-            accept="image/jpeg,image/gif,image/png,image/bmp">
-            <img v-if="pic1Url" :src="pic1Url + '?x-oss-process=style/sjzxt'" class="avatar">
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-          </el-upload>
+        <el-upload v-loading="loadingPic" class="avatar-uploader" :http-request="uploadPic" :multiple="true"
+          :show-file-list="false" action="" :before-upload="beforeAvatarUpload"
+          accept="image/jpeg,image/gif,image/png,image/bmp">
+          <img v-if="pic1Url" :src="pic1Url + '?x-oss-process=style/sjzxt'" class="avatar">
+          <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+        </el-upload>
         <span class="upload_pic_tip">
           (配图上传及回显速度较慢，耐心等待，不要重复点击上传)
         </span>
@@ -57,8 +57,8 @@
         <span class="word_tip">
           大侠留名:
         </span>
-        <el-input class="name_mail" v-model="authorName" maxlength="10" placeholder="昵称" size="small"></el-input>
-        <el-input class="name_mail" v-model="authorMail" placeholder="邮箱" size="small"></el-input>
+        <el-input style="width: 240px;" class="name_mail" v-model="authorName" maxlength="10" placeholder="昵称" size="small"></el-input>
+        <el-input style="width: 240px;" class="name_mail" v-model="authorMail" placeholder="邮箱" size="small"></el-input>
       </div>
 
       <div style="margin: 45px 0;"></div>
@@ -127,24 +127,24 @@
         }).then(resp => {
           _this.loadingSave = false;
           // if (resp.code == 200 && resp.data.data.status == 'success') {
-            _this.$message({
-              type: 'success',
-              message: '感谢你为人类做出的贡献!——司马千',
-              showClose: true,
-            });
-            _this.title='';
-            _this.content='';
-            _this.eventTime='';
-            _this.accuracy='#A8D8B9';
-            _this.pic1Url='';
-            _this.pic1Name='';
+          _this.$message({
+            type: 'success',
+            message: '感谢你为人类做出的贡献!——司马千',
+            showClose: true,
+          });
+          _this.title = '';
+          _this.content = '';
+          _this.eventTime = '';
+          _this.accuracy = '#A8D8B9';
+          _this.pic1Url = '';
+          _this.pic1Name = '';
 
           // }
         }, resp => {
           _this.loadingSave = false;
           _this.$message({
             type: 'error',
-            message: '发布失败!',
+            message: state == 0 ? '保存失败!' : '发布失败!',
             showClose: true,
           });
         })
@@ -243,9 +243,11 @@
     z-index: 100;
     box-shadow: 0px 0px 1px #d1d1d1;
   }
-.el-loading-mask{
-  z-index: 20000;
-}
+
+  .el-loading-mask {
+    z-index: 20000;
+  }
+
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;

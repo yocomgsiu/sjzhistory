@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Login from '@/components/Login'
-import Statistics from '@/components/Statistics'
-import RecordArticle from '@/components/RecordArticle'
+
+const Vue = require('vue')
+const Router = require('vue-router')
+const Login = () => import('@/components/Login')
+const RecordArticle = () => import('@/components/RecordArticle')
 import TimelineHistory from '@/components/TimelineHistory'
 
 Vue.use(Router)
@@ -35,13 +35,6 @@ export default new Router({
       component: TimelineHistory,
       meta: {
         keepAlive: true
-      }
-    }, {
-      path: '/statistics',
-      name: '统计数据',
-      component: Statistics,
-      meta: {
-        keepAlive: false
       }
     }
 

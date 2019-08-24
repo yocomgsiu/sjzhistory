@@ -70,7 +70,7 @@
         keyWord: '',
         timeKey: 0,
         page: _this.pageNumber,
-        size: 3,
+        size: 30,
         sort: 'eventTime,DESC'
       }).then(function (resp) {
         var contents = resp.data.data.content;
@@ -101,7 +101,7 @@
           keyWord: _this.keyWord,
           timeKey: _this.timeKey,
           page: _this.pageNumber,
-          size: 3,
+          size: 30,
           sort: 'eventTime,DESC'
 
         }).then(resp => {
