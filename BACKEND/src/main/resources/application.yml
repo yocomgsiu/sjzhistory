@@ -7,7 +7,7 @@ spring:
   datasource: # set database config
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
-    password: =SYK520/MysqlPw
+    password: 123456aA
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa: # set jpa
     database: MYSQL # specify ths DBMS
