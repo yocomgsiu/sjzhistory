@@ -96,16 +96,5 @@ public class UserController {
     	return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
     }
 	
-	@RequestMapping(value = "/test",method = RequestMethod.GET)
-	public void test(@PageableDefault(value = 15, sort = { "id" }, direction = Sort.Direction.ASC) 
-    Pageable pageable) {
-
-		
-		
-		
-	}
-
-	
-	
 	
 }

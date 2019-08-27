@@ -1,0 +1,19 @@
+cnpm install 
+
+cnpm install element-ui --save
+
+
+cnpm install ali-oss --save
+
+
+cnpm install --save-dev compression-webpack-plugin@1.1.12
+
+
+Vue CLI 3 默认支持打包报告，其实就是webpack-bundle-analyzer这个插件，使用vue-cli-service build --report就会在dist目录下生成一个report.html，打开这个页面就可以看到分析报告了。
+我们可以在package.json的scripts下面新增一行："report": "vue-cli-service build --report"，通过npm run build --report命令，打包完成后会自动打开分析页面
+cnpm run build --report
+
+
+
+
+nohup java -jar xxx.jar --server.port=8090 &
