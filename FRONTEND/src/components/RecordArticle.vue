@@ -1,7 +1,9 @@
 <template>
   <el-container class="home_container">
     <el-header>
+      <div class="top_bar">时间轴历史</div>
       <div class="top_bar">撰写文章</div>
+      <el-button class="top_bar_back" @click="backHome" icon="el-icon-back" type="text">返回</el-button>
     </el-header>
 
     <el-main class="main">
@@ -188,6 +190,12 @@
           })
         _this.loadingPic = false;
       },
+      backHome() {
+        var _this = this;
+        _this.$router.replace({
+          path: '/'
+        });
+      }
 
     },
     data() {
@@ -218,6 +226,11 @@
   .top_bar {
     color: rgb(128, 128, 128);
     font-size: 20px;
+    display: inline;
+  }
+  .top_bar_back {
+    color: rgb(128, 128, 128);
+    font-size: 15px;
     display: inline;
   }
 

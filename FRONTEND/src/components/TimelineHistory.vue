@@ -10,7 +10,7 @@
         <el-button size="small" icon="el-icon-search" @click="getArticle('new')" circle></el-button>
       </div>
       <div>
-        <el-dropdown @command="dropCommand">
+        <el-dropdown @command="dropCommand" style="margin-right: 10px;">
           <span class="el-dropdown-link ">
             <i class="el-icon-present "></i>
           </span>
